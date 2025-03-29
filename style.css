@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 2rem;
   line-height: 1.6;
-  background-color: #121212;  /* Dark background */
-  color: #e0e0e0;             /* Light text */
+  background-color: #121212;
+  color: #e0e0e0;
   max-width: 800px;
   margin: auto;
 }
@@ -21,6 +21,7 @@ header {
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 2px solid #333;
+  box-shadow: 0 0 15px rgba(128, 208, 255, 0.2);
 }
 
 h1 {
