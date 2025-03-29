@@ -73,7 +73,7 @@
 
     /* Main content */
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 2rem;
     }
@@ -128,21 +128,20 @@
       fill: var(--text-secondary);
     }
 
-    /* Biography section */
-    .biography {
-      margin: 4rem 0;
+    /* Section styling */
+    section {
+      margin-bottom: 3rem;
     }
 
-    .biography h2 {
+    h2 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       font-weight: 500;
     }
 
-    .biography p {
+    p {
       color: var(--text-secondary);
       margin-bottom: 1rem;
-      font-size: 1rem;
       line-height: 1.7;
     }
 
@@ -158,29 +157,9 @@
       margin-right: 0.5rem;
     }
 
-    /* Two column layout */
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin: 4rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Section styling */
-    .section-heading {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-
     ul {
       list-style-type: none;
+      margin-bottom: 1.5rem;
     }
 
     li {
@@ -220,54 +199,22 @@
       color: var(--text-secondary);
     }
 
-    /* Publications page styling */
-    .publications-header {
-      margin: 3rem 0 2rem;
+    /* Experience and Publications section */
+    .experience-item, .publication-item {
+      margin-bottom: 1.5rem;
     }
 
-    .publications-header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .publication-item {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 4px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      display: flex;
-      gap: 2rem;
-    }
-
-    .publication-content {
-      flex: 1;
-    }
-
-    .publication-title {
-      font-size: 1.5rem;
+    .experience-title, .publication-title {
       font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
     }
 
-    .publication-description {
+    .experience-details, .publication-details {
       color: var(--text-secondary);
-      margin-bottom: 1rem;
     }
 
     .publication-link {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 4px;
-      color: var(--text-primary);
-    }
-
-    .publication-image {
-      width: 150px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 4px;
+      margin-top: 0.25rem;
     }
 
     /* Footer */
@@ -279,32 +226,14 @@
       margin-top: 3rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-
-    /* Experience and Publications section */
-    .experience-item, .publication-list-item {
-      margin-bottom: 1rem;
-    }
-
-    .experience-title, .publication-list-title {
-      font-weight: 600;
-    }
-
-    .experience-details, .publication-list-details {
-      color: var(--text-secondary);
-    }
-
-    .publication-list-link {
-      display: inline-block;
-      margin-top: 0.25rem;
-    }
   </style>
 </head>
 <body>
   <nav>
     <div class="nav-name">Ashkan Y. Zadeh</div>
     <div class="nav-links">
-      <a href="index.html">Posts</a>
-      <a href="publications.html">Publications</a>
+      <a href="#">Posts</a>
+      <a href="#">Publications</a>
     </div>
     <div class="nav-right">
       <a href="https://twitter.com" target="_blank">
@@ -350,10 +279,10 @@
     </div>
 
     <!-- Biography Section -->
-    <div class="biography">
+    <section>
       <h2>Biography</h2>
       <p>I am a PhD student at the Queensland University of Technology (QUT), researching human-centered AI and explainability for automated vehicles. My background spans mechanical engineering, autonomous vehicle control, and deep learning-based behavior analysis.</p>
-      <p>I am also developing new quantitative metrics for assessing the overall health of autonomous driving agents. I have spent the past 5 years as an active machine learning and explainable AI researcher across organisations such as the University of Guilan, HeyvaAI, and Cheetah AV Research Institute. During my MSc in Mechanical Engineering at University of Guilan, I leveraged Fuzzy Logic and AI theories to develop transparent algorithms for generating intelligible explanations in autonomous driving.</p>
+      <p>I am also developing new quantitative metrics for assessing the overall health of autonomous driving agents. I have spent the past 5 years as an active machine learning and explainable AI researcher across organisations such as the University of Guilan, HeyvaAI, and Cheetah AV Research Institute.</p>
       
       <a href="#" class="download-cv">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -363,55 +292,122 @@
         </svg>
         Download my CV.
       </a>
-    </div>
+    </section>
 
-    <!-- Two column layout for Interests and Education -->
-    <div class="two-column">
-      <div>
-        <h2 class="section-heading">Interests</h2>
-        <ul>
-          <li>Explainable AI</li>
-          <li>Machine Learning</li>
-          <li>Knowledge Representation</li>
-          <li>Autonomous Driving</li>
-          <li>Human Factors in AI</li>
-        </ul>
-      </div>
+    <!-- Interests Section -->
+    <section>
+      <h2>Interests</h2>
+      <ul>
+        <li>Explainable AI</li>
+        <li>Machine Learning</li>
+        <li>Knowledge Representation</li>
+        <li>Autonomous Driving</li>
+        <li>Human Factors in AI</li>
+      </ul>
+    </section>
 
-      <div>
-        <h2 class="section-heading">Education</h2>
-        <div class="education-item">
-          <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-          </svg>
-          <div class="education-details">
-            <div class="education-degree">PhD in AI for Automated Driving, 2023-Present</div>
-            <div class="education-school">Queensland University of Technology</div>
-          </div>
-        </div>
-        <div class="education-item">
-          <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-          </svg>
-          <div class="education-details">
-            <div class="education-degree">MSc in Mechanical Engineering (Dynamics & Control), 2019-2022</div>
-            <div class="education-school">University of Guilan</div>
-          </div>
-        </div>
-        <div class="education-item">
-          <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-          </svg>
-          <div class="education-details">
-            <div class="education-degree">BSc in Mechanical Engineering, 2013-2018</div>
-            <div class="education-school">Islamic Azad University</div>
-          </div>
+    <!-- Education Section -->
+    <section>
+      <h2>Education</h2>
+      <div class="education-item">
+        <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+        </svg>
+        <div class="education-details">
+          <div class="education-degree">PhD in AI for Automated Driving, 2023-Present</div>
+          <div class="education-school">Queensland University of Technology</div>
         </div>
       </div>
-    </div>
+      <div class="education-item">
+        <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+        </svg>
+        <div class="education-details">
+          <div class="education-degree">MSc in Mechanical Engineering (Dynamics & Control), 2019-2022</div>
+          <div class="education-school">University of Guilan</div>
+        </div>
+      </div>
+      <div class="education-item">
+        <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+        </svg>
+        <div class="education-details">
+          <div class="education-degree">BSc in Mechanical Engineering, 2013-2018</div>
+          <div class="education-school">Islamic Azad University</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section>
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <div class="experience-title">Tutor at QUT (Feb 2024–Present)</div>
+        <div class="experience-details">Courses: EGB103, EGD103 – Computing and Data for Engineers</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">Doctoral Researcher at CARRS-Q (Jun 2023–Present)</div>
+        <div class="experience-details">Thesis: Human-Centric Explanations for AVs</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">Peer Reviewer at IEEE (Apr 2022–Present)</div>
+        <div class="experience-details">Journals: IEEE T-ITS, IEEE Access</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">Python Developer at HeyvaAI (Nov 2022–Mar 2023)</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">R&D Expert at Cheetah AV Research Institute (Nov–Dec 2022)</div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section>
+      <h2>Publications</h2>
+      <div class="publication-item">
+        <div class="publication-title">Integrated Intelligent Control Systems for Eco and Safe Driving</div>
+        <div class="publication-details">IEEE Transactions on Intelligent Transportation Systems</div>
+        <a href="https://doi.org/10.1109/TITS.2024.3479332" class="publication-link">DOI link</a>
+      </div>
+      <div class="publication-item">
+        <div class="publication-title">Fuzzy Adaptive Cruise Control with MPC for AVs</div>
+        <div class="publication-details">Engineering Applications of Artificial Intelligence</div>
+        <a href="https://www.sciencedirect.com/science/article/pii/S0952197624011667" class="publication-link">ScienceDirect</a>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="experience-item">
+        <div class="experience-title">Human-Centred Explainable Automated Vehicles (2023–Present)</div>
+        <div class="experience-details">Research on creating human-understandable explanations for automated vehicle decisions.</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">Digital Coins News Web Crawler (2022)</div>
+        <div class="experience-details">Developed an automated system to track and analyze cryptocurrency news.</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">Hybrid AV Safety and Energy Management (2019–2022)</div>
+        <div class="experience-details">Designed control systems for balancing safety and energy efficiency in autonomous vehicles.</div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section>
+      <h2>Achievements</h2>
+      <ul>
+        <li>IEEE AISS Scholarship (2024)</li>
+        <li>CARRS-Q Nudgeathon Team Member (2023)</li>
+        <li>QUT VYT Competition – Runner-Up & Finalist (2023)</li>
+        <li>ARC & QUT Postgrad Research Scholarships (2023–2024)</li>
+        <li>IBM Data Science Badge (2020)</li>
+        <li>Top 15% GPA – MSc at University of Guilan</li>
+      </ul>
+    </section>
   </div>
 
   <footer>
