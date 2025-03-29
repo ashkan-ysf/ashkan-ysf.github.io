@@ -1,42 +1,74 @@
+/* General page styling */
 body {
-  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 2rem;
-  line-height: 1.6;
-  background-color: #121212;
+  font-family: 'Inter', sans-serif;
+  background-color: #1c1e26;
   color: #e0e0e0;
-  max-width: 800px;
-  margin: auto;
 }
 
-header {
+/* Main container holding sidebar and content */
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Sidebar layout and styling */
+.sidebar {
+  flex: 1;
+  max-width: 280px;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-.profile-pic {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
+/* Profile picture */
+.profile-img {
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #444;
   margin-bottom: 1rem;
-  border: 2px solid #333;
-  box-shadow: 0 0 15px rgba(128, 208, 255, 0.2);
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.2rem;
+/* Name and role */
+.sidebar h1 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
 }
 
-h2 {
+.sidebar h3 {
+  font-weight: normal;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact info */
+.sidebar p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Social icons */
+.social-icons a {
+  color: #80d0ff;
+  margin: 0 10px;
   font-size: 1.4rem;
-  color: #ffffff;
-  border-bottom: 1px solid #444;
-  padding-bottom: 0.2rem;
-  margin-top: 2rem;
 }
 
+/* Content layout */
+main.content {
+  flex: 2.5;
+}
+
+/* Section headers */
+h2, h3 {
+  color: #ffffff;
+}
+
+/* Links */
 a {
   color: #80d0ff;
   text-decoration: none;
@@ -44,22 +76,52 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: #b3e5fc;
 }
 
+/* CV download link */
+.cv-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2a2d3c;
+  color: #80d0ff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* Two-column grid for Interests and Education */
+.grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.grid-row > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Bullet lists */
 ul {
+  list-style-type: disc;
   padding-left: 1.2rem;
 }
 
-section {
-  margin-bottom: 2rem;
-}
+/* Responsive: stack columns on smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
 
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 3rem;
-  border-top: 1px solid #333;
-  padding-top: 1rem;
+  .sidebar {
+    max-width: 100%;
+  }
+
+  .grid-row {
+    flex-direction: column;
+  }
 }
