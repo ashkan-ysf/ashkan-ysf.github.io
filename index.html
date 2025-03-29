@@ -1,354 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ashkan Y. Zadeh - Data Scientist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #2563eb;
-      --secondary-color: #1e40af;
-      --dark-color: #111827;
-      --light-color: #f3f4f6;
-      --gray-color: #6b7280;
-      --transition: all 0.3s ease;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #1c1e26;
+  color: #e0e0e0;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: var(--dark-color);
-      background-color: var(--light-color);
-    }
+.sidebar {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+}
 
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: var(--transition);
-    }
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #444;
+  margin-bottom: 1rem;
+}
 
-    a:hover {
-      color: var(--secondary-color);
-    }
+.sidebar h1 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+.sidebar h3 {
+  font-weight: normal;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
 
-    /* Header */
-    header {
-      background-color: white;
-      padding: 2rem 0;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
+.sidebar p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
 
-    .profile-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
+.social-icons a {
+  color: #80d0ff;
+  margin: 0 10px;
+  font-size: 1.4rem;
+}
 
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--primary-color);
-      box-shadow: var(--shadow);
-    }
+main.content {
+  flex: 2.5;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--dark-color);
-    }
+h2, h3 {
+  color: #fff;
+}
 
-    .subtitle {
-      font-size: 1.2rem;
-      color: var(--gray-color);
-      margin-bottom: 1rem;
-    }
+a {
+  color: #80d0ff;
+  text-decoration: none;
+}
 
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 0.5rem;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
-    .social-links a {
-      font-weight: 500;
-    }
+.cv-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2a2d3c;
+  color: #80d0ff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
 
-    /* Main content */
-    main {
-      padding: 3rem 0;
-    }
+.grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-    section {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
-    }
+.grid-row > div {
+  flex: 1;
+  min-width: 250px;
+}
 
-    h2 {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--light-color);
-    }
-
-    ul {
-      list-style-position: inside;
-      margin-left: 1rem;
-    }
-
-    li {
-      margin-bottom: 0.75rem;
-    }
-
-    strong {
-      font-weight: 600;
-      color: var(--dark-color);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-      margin-left: 0;
-    }
-
-    .skill-tag {
-      background-color: rgba(37, 99, 235, 0.1);
-      color: var(--primary-color);
-      padding: 0.35rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .publication {
-      margin-bottom: 1.5rem;
-    }
-
-    .publication a {
-      display: inline-block;
-      margin-top: 0.25rem;
-      font-size: 0.9rem;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      color: var(--gray-color);
-      font-size: 0.9rem;
-    }
-
-    /* Media queries */
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <div class="profile-container">
-        <img src="assets/img/ashkanzadeh.jpg" alt="Ashkan Y. Zadeh" class="profile-pic">
-        <div>
-          <h1>Ashkan Y. Zadeh</h1>
-          <p class="subtitle">PhD Student · Data Scientist · AI Researcher</p>
-          <div class="social-links">
-            <a href="mailto:ashkan.zadeh@qut.edu.au">Email</a>
-            <a href="https://github.com/your-username" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/ashkan-ysf/" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section>
-      <h2>About Me</h2>
-      <p>I am a PhD student at the Queensland University of Technology (QUT), researching human-centered AI and explainability for automated vehicles. My background spans mechanical engineering, autonomous vehicle control, and deep learning-based behavior analysis.</p>
-    </section>
-
-    <section>
-      <h2>Research Interests</h2>
-      <div class="skills-list">
-        <span class="skill-tag">Automated Vehicles</span>
-        <span class="skill-tag">Human-Centred AI</span>
-        <span class="skill-tag">Explainable AI</span>
-        <span class="skill-tag">NLP</span>
-        <span class="skill-tag">LLMs</span>
-      </div>
-    </section>
-
-    <div class="grid">
-      <section>
-        <h2>Education</h2>
-        <ul>
-          <li><strong>QUT</strong> — PhD in AI for Automated Driving (2023–Present)</li>
-          <li><strong>University of Guilan</strong> — MSc in Mechanical Engineering (Dynamics & Control), 2019–2022</li>
-          <li><strong>Islamic Azad University</strong> — BSc in Mechanical Engineering, 2013–2018</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Experience</h2>
-        <ul>
-          <li><strong>Tutor at QUT</strong> (Feb 2024–Present)<br>Courses: EGB103, EGD103 – Computing and Data for Engineers</li>
-          <li><strong>Doctoral Researcher at CARRS-Q</strong> (Jun 2023–Present)<br>Thesis: Human-Centric Explanations for AVs</li>
-          <li><strong>Peer Reviewer at IEEE</strong> (Apr 2022–Present)<br>Journals: IEEE T-ITS, IEEE Access</li>
-          <li><strong>Python Developer at HeyvaAI</strong> (Nov 2022–Mar 2023)</li>
-          <li><strong>R&D Expert at Cheetah AV Research Institute</strong> (Nov–Dec 2022)</li>
-        </ul>
-      </section>
-    </div>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="grid">
-        <div>
-          <h3>Programming</h3>
-          <div class="skills-list">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">MATLAB</span>
-          </div>
-        </div>
-        <div>
-          <h3>AI/ML</h3>
-          <div class="skills-list">
-            <span class="skill-tag">NLP</span>
-            <span class="skill-tag">LLMs</span>
-            <span class="skill-tag">Fuzzy Logic</span>
-            <span class="skill-tag">Neural Nets</span>
-            <span class="skill-tag">Evolutionary Algorithms</span>
-          </div>
-        </div>
-        <div>
-          <h3>Simulation</h3>
-          <div class="skills-list">
-            <span class="skill-tag">Simulink</span>
-          </div>
-        </div>
-        <div>
-          <h3>Tools</h3>
-          <div class="skills-list">
-            <span class="skill-tag">Linux</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">MS Office</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="grid">
-      <section>
-        <h2>Selected Projects</h2>
-        <ul>
-          <li><strong>Human-Centred Explainable Automated Vehicles</strong> (2023–Present)</li>
-          <li><strong>Digital Coins News Web Crawler</strong> (2022)</li>
-          <li><strong>Hybrid AV Safety and Energy Management</strong> (2019–2022)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Achievements</h2>
-        <ul>
-          <li>IEEE AISS Scholarship (2024)</li>
-          <li>CARRS-Q Nudgeathon Team Member (2023)</li>
-          <li>QUT VYT Competition – Runner-Up & Finalist (2023)</li>
-          <li>ARC & QUT Postgrad Research Scholarships (2023–2024)</li>
-          <li>IBM Data Science Badge (2020)</li>
-          <li>Top 15% GPA – MSc at University of Guilan</li>
-        </ul>
-      </section>
-    </div>
-
-    <section>
-      <h2>Publications</h2>
-      <div class="publication">
-        <strong>Integrated Intelligent Control Systems for Eco and Safe Driving</strong><br>
-        <em>IEEE Transactions on Intelligent Transportation Systems</em><br>
-        <a href="https://doi.org/10.1109/TITS.2024.3479332" target="_blank">DOI link</a>
-      </div>
-      <div class="publication">
-        <strong>Fuzzy Adaptive Cruise Control with MPC for AVs</strong><br>
-        <em>Engineering Applications of Artificial Intelligence</em><br>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0952197624011667" target="_blank">ScienceDirect</a>
-      </div>
-    </section>
-
-    <div class="grid">
-      <section>
-        <h2>Certificates</h2>
-        <ul>
-          <li>Peer Review – Web of Science Academy</li>
-          <li>Intro to Self-Driving Cars – University of Toronto (Coursera)</li>
-          <li>Robotics Workshop – Sharif University</li>
-          <li>AI in Robotics – K. N. Toosi University</li>
-          <li>IBM Data Science Certificate – Coursera</li>
-          <li>Intermediate ML – Kaggle</li>
-          <li>Data Science Foundations – UC Berkeley (edX)</li>
-          <li>Python for Data Science – University of Tehran</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Languages</h2>
-        <ul>
-          <li><strong>English</strong> — Professional Proficiency</li>
-          <li><strong>Persian</strong> — Native Proficiency</li>
-        </ul>
-
-        <h2 style="margin-top: 2rem;">Interests</h2>
-        <div class="skills-list">
-          <span class="skill-tag">Automated Vehicles</span>
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">XAI</span>
-          <span class="skill-tag">NLP</span>
-          <span class="skill-tag">Technical Writing</span>
-          <span class="skill-tag">Martial Arts</span>
-          <span class="skill-tag">Mountaineering</span>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <p>© 2025 Ashkan Y. Zadeh</p>
-  </footer>
-</body>
-</html>
+ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
